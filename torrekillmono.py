@@ -72,6 +72,14 @@ def crear_mono():
     else:
         return True
 
+def game_over(torreta, enemigo):
+	#cuando termina el juego	
+	global fin_de_juego
+	enemigo.sonreir()
+	torreta.eliminar()
+	puntos.eliminar
+	pilas.avisar("GAME OVER. Conseguiste %d puntos" % (puntos.obtener()))
+	fin_de_juego = True
 
 class MiMunicion(pilasengine.actores.Actor):
 	
@@ -79,7 +87,10 @@ class MiMunicion(pilasengine.actores.Actor):
         self.imagen = "disparos/bola_amarilla.png"
     
     def actualizar(self):
-        self.escala = 5
+        self.escala = 3
+
+
+
 pilas.actores.vincular(MiMunicion)
 bala_simple = pilas.actores.MiMunicion()
 
@@ -92,7 +103,7 @@ pilas.tareas.agregar(1, crear_mono)
 
 
 #pilas.colisiones.agregar(monos, bala_simple, mono_destruido)
-
+pilas.colisiones.agregar(torreta,monos, game_over)
 # Arrancar el juego
 pilas.ejecutar()
 
