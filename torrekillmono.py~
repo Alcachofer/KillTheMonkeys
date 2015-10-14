@@ -91,6 +91,7 @@ pilas.tareas.agregar(1, crear_mono)
 #pilas.mundo.agregar_tarea(1, crear_mono) <-- sintaxis vieja
 
 
+
 #pilas.colisiones.agregar(monos, bala_simple, mono_destruido)
 
 # Arrancar el juego
